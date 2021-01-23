@@ -11,7 +11,7 @@ function log(msg) {
 
 async function loadModel() {
   console.log('Loading mobilenet..');
-
+  tf.setBackend('cpu');
   // Load the model.
   net = await mobilenet.load();
   // net = await tf.loadGraphModel("https://tfhub.dev/google/tfjs-model/imagenet/resnet_v2_50/classification/3/default/1", { fromTFHub: true });
