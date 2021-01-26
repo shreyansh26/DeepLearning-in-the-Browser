@@ -1,0 +1,92 @@
+<!-- <html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+  <script src="common/ndarray-browser-min.js"></script>
+  <script src="common/imagenet.js"></script>
+  <script src="common/image-loader.js"></script>
+  <script src="./webdnn.js"></script>
+  <script src="index.js"></script>
+  <script>
+    const imageSize = 224;
+  </script>
+</head>
+<body onload="loadModel();">
+  <h1>Resnet50 Example</h1>
+  <img id="imageSource" src="./aeroplane.jpg"/>
+  <div>
+    <input type="button" value="Run" onclick="runExample()">
+  </div>
+  <div id="predictions">
+
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Classifiction - ResNet50 (ONNX-JS)</title>
+    <meta charset="utf-8">
+    <script src="webdnn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+    <script src="common/ndarray-browser-min.js"></script>
+    <script src="common/imagenet.js"></script>
+    <script src="common/image-loader.js"></script>
+    <script src="index.js"></script>
+    <script>
+      const imageSize = 224;
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+</head>
+
+<body onload="loadModel()">
+
+<div class="container my-5">
+    <div class="row my-3">
+        <div class="col-12">
+            <h1>Image Classifiction - ResNet50 (ONNX-JS)</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row my-3">
+        <div class="col-12 col-md-auto">
+            <canvas id="input_image" width="224" height="224"></canvas>
+        </div>
+
+        <div class="col-12 col-md container-fluid">
+            <div class="row my-2 form-inline">
+                <div class="form-group">
+                    <label class="mr-3" for="image_url">Image URL</label>
+                    <input class="form-control mr-3" type="text" id="image_url" value="./aeroplane.jpg" size="60">
+                </div>
+                <button class="btn" type="button" onclick="imgSet()">Load</button>
+            </div>
+
+            <div class="row mt-5">
+                <button class="btn btn-block btn-primary" id="run_button" type="button" onclick="runExample();" disabled>Run</button>
+                <!-- <input type="button" id="run_button" value="Run" onclick="runExample()"> -->
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12" id="predictions"></div>
+  </div>
+</div>
+
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12" id="messages"></div>
+    </div>
+</div>
+
+</body>
+
+</html>
